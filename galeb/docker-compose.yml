@@ -1,0 +1,51 @@
+router:
+  image: galeb/galeb-router
+  ports:
+   - "8080:8080"
+  volumes:
+   - ~/docker/.m2:/home/galeb/.m2
+  environment:
+   - CLUSTER_ID=dev
+
+api:
+  image: galeb/galeb-api
+  ports:
+   - "9090:9090"
+  volumes:
+   - ~/docker/.m2:/home/galeb/.m2
+  environment:
+   - CLUSTER_ID=dev
+
+healthchecker:
+  image: galeb/galeb-healthchecker
+  volumes:
+   - ~/docker/.m2:/home/galeb/.m2
+  environment:
+   - CLUSTER_ID=dev
+
+metrics:
+  image: galeb/galeb-metrics
+  volumes:
+   - ~/docker/.m2:/home/galeb/.m2
+  environment:
+   - CLUSTER_ID=dev
+
+backend1:
+  image: galeb/backend-galeb-test
+  ports:
+   - "8081:8081"
+
+backend2:
+  image: galeb/backend-galeb-test
+  ports:
+   - "8082:8082"
+
+backend3:
+  image: galeb/backend-galeb-test
+  ports:
+   - "8083:8083"
+
+backend4:
+  image: galeb/backend-galeb-test
+  ports:
+   - "8084:8084"

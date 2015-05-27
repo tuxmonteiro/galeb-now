@@ -1,0 +1,8 @@
+api:
+  image: tuxmonteiro/galeb-api
+  ports:
+   - "9090:9090"
+  volumes:
+   - ~/.m2:/home/galeb/.m2
+  environment:
+   - CLUSTER_ID=dev

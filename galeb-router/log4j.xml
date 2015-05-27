@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+  <Properties>
+    <Property name="LOGLEVEL">INFO</Property>
+  </Properties>
+  <Appenders>
+    <Console name="STDOUT" target="SYSTEM_OUT">
+      <PatternLayout>
+        <Pattern>%d %p %c{1.} [%t] %m %ex%n</Pattern>
+      </PatternLayout>
+    </Console>
+    <Async name="AsyncSystem">
+      <AppenderRef ref="STDOUT"/>
+    </Async>
+  </Appenders>
+  <Loggers>
+    <Logger name="org.xnio.listener" level="OFF" additivity="false"/>
+    <Logger name="io.undertow.request" level="OFF" additivity="false"/>
+    <Root level="trace">
+      <AppenderRef ref="AsyncSystem" level="${env:LOGLEVEL}"/>
+    </Root>
+  </Loggers>
+</Configuration>

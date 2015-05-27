@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#curl -v -XPOST http://@API@:9090/backendpool -d "{'id':'pool1', 'version':1, 'properties':{'loadBalancePolicy': 'RoundRobinPolicy'}}"
+#curl -v -XPOST http://@API@:9090/backendpool -d "{'id':'pool1', 'version':1, 'properties':{'loadBalancePolicy': 'RandomPolicy'}}"
+#curl -v -XPOST http://@API@:9090/backendpool -d "{'id':'pool1', 'version':1, 'properties':{'loadBalancePolicy': 'IPHashPolicy'}}"
+#curl -v -XPOST http://@API@:9090/backendpool -d "{'id':'pool1', 'version':1, 'properties':{'loadBalancePolicy': 'LeastConnPolicy'}}"
+curl -v -XPOST http://@API@:9090/backendpool -d "{'id':'pool1', 'version':1, 'properties':{'loadBalancePolicy': '@POLICY@'}}"
+
+curl -v -XPOST http://@API@:9090/backend -d "{'id':'http://@BACKEND1@:8081', 'version':2,'parentId':'pool1'}"
+curl -v -XPOST http://@API@:9090/backend -d "{'id':'http://@BACKEND2@:8082', 'version':3,'parentId':'pool1'}"
+curl -v -XPOST http://@API@:9090/backend -d "{'id':'http://@BACKEND3@:8083', 'version':4,'parentId':'pool1'}"
+curl -v -XPOST http://@API@:9090/backend -d "{'id':'http://@BACKEND4@:8084', 'version':5,'parentId':'pool1'}"
+
+curl -v -XPOST http://@API@:9090/virtualhost -d "{'id':'lol.localdomain', 'version':6}"
+
+curl -v -XPOST http://@API@:9090/rule -d "{'id':'rule1', 'version':7, 'parentId':'lol.localdomain', 'properties':{'ruleType':'UriPath','match':'/','orderNum':1,'default':false,'targetType':'BackendPool','targetId':'pool1'}}"

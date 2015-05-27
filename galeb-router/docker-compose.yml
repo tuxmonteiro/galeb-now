@@ -1,0 +1,8 @@
+router:
+  image: tuxmonteiro/galeb-router
+  ports:
+   - "8080:8080"
+  volumes:
+   - ~/.m2:/home/galeb/.m2
+  environment:
+   - CLUSTER_ID=dev

@@ -1,0 +1,6 @@
+healthchecker:
+  image: tuxmonteiro/galeb-healthchecker
+  volumes:
+   - ~/.m2:/home/galeb/.m2
+  environment:
+   - CLUSTER_ID=dev
