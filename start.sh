@@ -12,4 +12,5 @@ echo "> Loading routes...."
 echo '================================'
 echo "> DONE. Executing curl -H'Host: lol.localdomain' $(./ip-router.sh):8080"
 sleep 2
+echo
 curl -H'Host: lol.localdomain' $(./ip-router.sh):8080
