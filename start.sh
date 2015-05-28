@@ -5,7 +5,7 @@ cd - > /dev/null 2>&1
 echo
 echo '================================'
 echo "> Building.... (wait until 150 seconds)"
-for x in $(seq 1 150); do echo -n '.';sleep 1;done; echo
+for x in $(seq 1 150); do echo -n '.'; if [ "$[(x/10)*10]" == "$x" ];then echo -n "[$x]";fi;sleep 1;done; echo
 echo '================================'
 echo "> Loading routes...."
 ./load-routes.sh
