@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#curl -v -XPOST http://@API@:9090/backendpool -d "{'id':'pool1', 'version':1, 'properties':{'loadBalancePolicy': 'RoundRobinPolicy'}}"
-#curl -v -XPOST http://@API@:9090/backendpool -d "{'id':'pool1', 'version':1, 'properties':{'loadBalancePolicy': 'RandomPolicy'}}"
-#curl -v -XPOST http://@API@:9090/backendpool -d "{'id':'pool1', 'version':1, 'properties':{'loadBalancePolicy': 'IPHashPolicy'}}"
-#curl -v -XPOST http://@API@:9090/backendpool -d "{'id':'pool1', 'version':1, 'properties':{'loadBalancePolicy': 'LeastConnPolicy'}}"
+#curl -v -XPOST http://@API@:9090/backendpool -d "{'id':'pool1', 'version':1, 'properties':{'loadBalancePolicy': 'RoundRobin'}}"
+#curl -v -XPOST http://@API@:9090/backendpool -d "{'id':'pool1', 'version':1, 'properties':{'loadBalancePolicy': 'Random'}}"
+#curl -v -XPOST http://@API@:9090/backendpool -d "{'id':'pool1', 'version':1, 'properties':{'loadBalancePolicy': 'IPHash'}}"
+#curl -v -XPOST http://@API@:9090/backendpool -d "{'id':'pool1', 'version':1, 'properties':{'loadBalancePolicy': 'LeastConn'}}"
 curl -v -XPOST http://@API@:9090/backendpool -d "{'id':'pool1', 'version':1, 'properties':{'loadBalancePolicy': '@POLICY@'}}"
 
 curl -v -XPOST http://@API@:9090/backend -d "{'id':'http://@BACKEND1@:8081', 'version':2,'parentId':'pool1'}"
