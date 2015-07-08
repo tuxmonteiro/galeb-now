@@ -240,5 +240,8 @@
     </serialization>
 
     <services enable-defaults="true"/>
+    <listeners>
+        <listener>io.galeb.hazelcast.NodeLifecycleListener</listener>
+    </listeners>
 
 </hazelcast>
