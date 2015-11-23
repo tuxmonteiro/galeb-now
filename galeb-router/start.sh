@@ -19,4 +19,10 @@ java -server \
      -Dio.galeb.services.router.port=$PORT \
      -Dio.galeb.maxConn=$MAXCONN \
      -Dio.galeb.schedulerInterval=$INTERVAL \
+     -Dio.galeb.pool.softMaxConnectionsPerThread=5 \
+     -Dio.galeb.services.router.idleTimeout=30000 \
+     -Dio.galeb.core.statsd.host=127.0.0.1 \
+     -Dio.galeb.core.statsd.port=8125 \
+     -Dio.galeb.cmm.ttl.threadId=3600 \
+     -Dio.galeb.cmm.ttl.uri=3600 \
      -jar target/galeb-router-$VERSION-uber.jar

@@ -16,4 +16,6 @@ java -server \
      -Dlog4j.configurationFile=log4j.xml \
      -Dhazelcast.config=hazelcast.xml \
      -Dio.galeb.schedulerInterval=$INTERVAL \
+     -Dio.galeb.services.healthchecker.connectionTimeout=15000 \
+     -Dio.galeb.services.healthchecker.followRedirects=false \
      -jar target/galeb-healthchecker-$VERSION-uber.jar

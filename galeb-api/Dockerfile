@@ -4,7 +4,7 @@ MAINTAINER Marcelo Teixeira Monteiro
 
 ENV PORT 9090
 ENV INTERVAL 1000
-ENV VERSION 3.0.1-SNAPSHOT
+ENV VERSION 3.1.9-SNAPSHOT
 
 ADD start.sh /usr/bin/
 ADD log4j.xml /tmp/

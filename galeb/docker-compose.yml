@@ -6,7 +6,7 @@ router:
    - ~/docker/.m2:/home/galeb/.m2
   environment:
    - CLUSTER_ID=dev
-   - VERSION=3.0.2-SNAPSHOT
+   - VERSION=3.1.9-SNAPSHOT
 
 api:
   image: galeb/galeb-api
@@ -16,7 +16,7 @@ api:
    - ~/docker/.m2:/home/galeb/.m2
   environment:
    - CLUSTER_ID=dev
-   - VERSION=3.0.2-SNAPSHOT
+   - VERSION=3.1.9-SNAPSHOT
 
 healthchecker:
   image: galeb/galeb-healthchecker
@@ -24,7 +24,7 @@ healthchecker:
    - ~/docker/.m2:/home/galeb/.m2
   environment:
    - CLUSTER_ID=dev
-   - VERSION=3.0.2-SNAPSHOT
+   - VERSION=3.1.9-SNAPSHOT
 
 backend1:
   image: galeb/backend-galeb-test
