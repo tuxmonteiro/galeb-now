@@ -15,7 +15,6 @@ java -server \
      -Xmx1024m \
      -Dlog4j.configurationFile=log4j.xml \
      -Dhazelcast.config=hazelcast.xml \
-     -Dio.galeb.schedulerInterval=$INTERVAL \
      -Dio.galeb.services.api.port=$PORT \
      -Dio.galeb.services.api.queue.limit=1048576 \
      -jar target/galeb-api-$VERSION-uber.jar
