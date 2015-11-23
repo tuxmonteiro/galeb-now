@@ -1,0 +1,26 @@
+manager_webui:
+  image: galeb/galeb-manager-webui
+  ports:
+   - "8001:80"
+  links:
+   - manager
+
+manager:
+  image: galeb/galeb-manager
+  ports:
+   - "8000:8000"
+  volumes:
+   - ~/.m2:/home/galeb/.m2
+  links:
+   - db
+   - redis
+
+db:
+    image: mysql:5.6
+    environment:
+    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_DATABASE=galeb
+
+redis:
+    image: redis:2.8
+

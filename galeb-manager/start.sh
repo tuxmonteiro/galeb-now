@@ -3,9 +3,9 @@
 rm -rf galeb* || true
 
 git clone --recursive https://github.com/galeb/galeb-manager.git
+cd galeb-manager
 git fetch --all
 git checkout $VERSION
-cd galeb-manager
 mvn clean install -DskipTests
 cp /tmp/log4j.xml .
 

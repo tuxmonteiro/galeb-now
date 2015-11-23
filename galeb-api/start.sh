@@ -1,9 +1,9 @@
 #!/bin/bash
 
-rm -rf galeb3* || true
+rm -rf galeb* || true
 
-git clone --recursive https://github.com/galeb/galeb3-api.git
-cd galeb3-api
+git clone --recursive https://github.com/galeb/galeb-api.git
+cd galeb-api
 mvn clean install
 cp /tmp/log4j.xml .
 cp /tmp/hazelcast.xml .

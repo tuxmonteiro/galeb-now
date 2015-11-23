@@ -3,13 +3,11 @@
 curdir=$PWD
 VERSION=3.1.9
 
-for i in galeb-api galeb-healthchecker galeb-router galeb-metrics backend-galeb-test
+for i in galeb-api galeb-healthchecker galeb-router galeb-metrics backend-galeb-test galeb-manager galeb-manager-webui
 do
     cd $i
     pwd
     IMAGE="galeb/${i}"
-    ID="$(docker build -t ${IMAGE} .)"
-    docker tag ${ID} ${IMAGE}:${VERSION}
-    docker tag -f ${ID} ${IMAGE}:latest
+    docker build -t ${IMAGE} .
     cd $curdir
 done
