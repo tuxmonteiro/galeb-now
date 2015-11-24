@@ -7,6 +7,7 @@ manager:
   links:
    - db
    - redis
+   - api
 
 db:
     image: mysql:5.6
@@ -17,3 +18,5 @@ db:
 redis:
     image: redis:2.8
 
+api:
+    image: galeb/galeb-api
