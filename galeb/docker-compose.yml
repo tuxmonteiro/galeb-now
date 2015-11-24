@@ -20,6 +20,8 @@ redis:
 
 manager_webui:
   image: galeb/galeb-manager-webui
+  ports:
+   - "8001:80"
   links:
   - manager
 
